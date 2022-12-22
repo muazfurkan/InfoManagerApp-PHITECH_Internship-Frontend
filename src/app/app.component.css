@@ -1,0 +1,33 @@
+.mat-success {
+  color: white;
+  background: linear-gradient(to left, #338686 0%, #330867 100%);
+  height: 100px!important;
+}
+
+.mat-icon-button {
+  outline: none;
+  margin: 10px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-button {
+  width: 400px;
+  height: 100px;
+  outline: none;
+  font-size: 30px;
+}
+
+.title {
+  margin-left: 30px;
+}
+
+.person-icn {
+  color: #330867;
+}
+
+.list-icn {
+  color: #330867;
+}

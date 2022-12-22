@@ -1,0 +1,28 @@
+<div>
+  <mat-toolbar color="success">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <span class="title">
+      <button mat-button routerLink="/login" [disableRipple]="true">
+        {{title}}
+      </button>
+    </span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button="home-btn" aria-label="Example icon-button with share icon" routerLink="">
+      <mat-icon>home</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="toolbar-btn" routerLink="/adduser">
+        <mat-icon class="person-icn">person_add</mat-icon>
+        <span>Add user</span>
+      </button>
+      <button mat-menu-item class="toolbar-btn" routerLink="/users">
+        <mat-icon class="list-icn">view_list</mat-icon>
+        <span>User List</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>

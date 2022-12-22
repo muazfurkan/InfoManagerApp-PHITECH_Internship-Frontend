@@ -1,0 +1,54 @@
+<div class="card-body">
+    <form (submit)="onSubmit()">
+    <div class="form-group">
+      <mat-form-field appearance="legacy" [style.width.%]="100">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="nameControl" placeholder="Full Name" #name>
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="!nameControl.hasError('requiredTrue')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width" appearance="legacy" [style.width.%]="100">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="emailControl" placeholder="Ex. pat@example.com" #email>
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width" appearance="legacy" [style.width.%]="100">
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+90 &nbsp;</span>
+        <input matInput type="tel" (keypress)="numberOnly($event)" maxlength="10" [formControl]="phoneControl" placeholder="555-555-1234" #phone>
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-error *ngIf="!phoneControl.hasError('requiredTrue')">
+          Telephone is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="legacy" [style.width.%]="100">
+        <mat-label>Address</mat-label>
+        <input matInput [formControl]="addressControl" placeholder="City" #address>
+        <mat-icon matSuffix>place</mat-icon>
+        <mat-error *ngIf="!addressControl.hasError('requiredTrue')">
+          Address is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="form-group">
+    <button mat-flat-button color="success" type="submit" (click)="setUser(name.value, email.value, phone.value, address.value)">
+      Add User
+    </button>
+    </div>
+  </form>
+</div>

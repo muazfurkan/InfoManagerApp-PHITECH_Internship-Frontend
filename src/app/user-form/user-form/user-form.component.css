@@ -1,0 +1,12 @@
+.card-body {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.mat-success {
+  color: white;
+  width: 30%!important;
+  margin-left: 35%!important;
+  margin-top: 3%!important;
+  background: linear-gradient(to right, #338686 0%, #330867 100%);
+}

@@ -1,0 +1,30 @@
+<div class="card-body">
+  <form (submit)="onSubmit()">
+    <div class="form-group">
+      <mat-form-field appearance="legacy" [style.width.%]="100">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="nameControl" placeholder="Name" #name>
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="!nameControl.hasError('requiredTrue')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="example-full-width" appearance="legacy" [style.width.%]="100">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput [formControl]="passwordControl" placeholder="Password" #password>
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-error *ngIf="passwordControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="form-group">
+    <button mat-flat-button color="success" type="submit" (click)="addAdmin(name.value, password.value)" [style.width.%]="100">
+      LogIn
+    </button>
+    </div>
+  </form>
+</div>
