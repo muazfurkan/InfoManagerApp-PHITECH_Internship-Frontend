@@ -9,11 +9,11 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent },
   { path: 'adduser', component: UserFormComponent },
   { path: 'edituser/:id', component: EditUserComponent },
-  { path: 'login', component: AdminAuthComponent }
+  { path: 'login', component: AdminAuthComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
