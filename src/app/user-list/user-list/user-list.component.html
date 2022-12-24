@@ -1,7 +1,7 @@
 <div class="card-body">
   <mat-form-field appearance="legacy" [style.width.%]="100">
     <mat-label>{{searchCondition}}</mat-label>
-    <input matInput (keyup)="applyServerSideFilter(_filterText.value)" placeholder="Search by {{searchCondition}}" #_filterText>
+    <input matInput placeholder="Search by {{searchCondition}}" #_filterText>
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
   <mat-radio-group

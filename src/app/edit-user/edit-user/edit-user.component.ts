@@ -7,10 +7,9 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.css']
+  styleUrls: ['./edit-user.component.css'],
 })
 export class EditUserComponent implements OnInit {
-
   userId: any;
   user: User;
   nameControl = new FormControl('', [Validators.required]);
@@ -18,42 +17,45 @@ export class EditUserComponent implements OnInit {
   phoneControl = new FormControl('', [Validators.required]);
   addressControl = new FormControl('', [Validators.required]);
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private userService: UserService,
-              private router: Router,
-              private formBuilder: FormBuilder) {
-                this.user = new User;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
+    this.user = new User();
   }
 
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.userId)
-    this.userService.findById(this.userId).subscribe(data => {
+    console.log(this.userId);
+    this.userService.findById(this.userId).subscribe((data) => {
       this.user = data;
-    })
+    });
   }
 
   numberOnly(event: any): boolean {
-    const charCode = (event.which) ? event.which : event.keyCode;
+    const charCode = event.which ? event.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
       return false;
     }
     return true;
   }
 
-  updateUser(_name: string, _email: string, _phone: string, _address: string){
+  updateUser(_name: string, _email: string, _phone: string, _address: string) {
     this.user.name = _name;
     this.user.email = _email;
     this.user.phone = _phone;
     this.user.address = _address;
   }
 
-  onSubmit(){
-    this.userService.editUser(this.userId, this.user).subscribe(result => this.gotoUserList())
+  onSubmit() {
+    this.userService
+      .editUser(this.userId, this.user)
+      .subscribe((result) => this.gotoUserList());
   }
 
   gotoUserList() {
     this.router.navigate(['/users']);
   }
-
 }

@@ -12,13 +12,13 @@ import { NgxPaginationModule, PaginationService } from 'ngx-pagination';
 import { EditUserComponent } from './edit-user/edit-user/edit-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatIconModule }   from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatDividerModule } from '@angular/material/divider'
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
@@ -34,13 +34,13 @@ import { AdminAuthComponent } from './admin-auth/admin-auth/admin-auth.component
     FilterPipe,
     EditUserComponent,
     AdminAuthComponent,
-   ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, 
-    NgxPaginationModule, 
+    FormsModule,
+    NgxPaginationModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatIconModule,
@@ -54,9 +54,9 @@ import { AdminAuthComponent } from './admin-auth/admin-auth/admin-auth.component
     MatTableModule,
     MatSelectModule,
     MatRadioModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [UserService, FilterPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
